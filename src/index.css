@@ -1,3 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: inherit;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: 'GmarketSansMedium';
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +19,145 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.Logo {
+  height: 70px;
+}
+.menu {
+  display: flex;
+  align-items: center;
+
+  > ul {
+    display: flex;
+    gap: 35px;
+    font-size: 22px;
+
+    > li{
+      position: relative;
+
+      > ul {
+        position: absolute;
+        top: 100%;
+        left: 30%;
+        border-radius: 10px;
+        overflow: hidden;
+        color: #000;
+        height: 0;
+        transition: height .3s;
+
+        > li {
+          background-color: #fff;
+          border-bottom: 1px solid #ddd;
+          box-sizing: content-box;
+          padding-bottom: 3px;
+          width: 100px;
+          height: 30px;
+          text-align: center;
+          line-height: 30px;
+        }
+      }
+    }
+    > li:hover {
+      color: #3C38FE;
+
+      > svg {
+        > path {
+          fill: #3C38FE;
+        }
+      }
+      > ul {
+        height: 102px;
+      }
+    }
+    > li:nth-last-child(1) {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      > svg {
+        margin-bottom: 5px;
+        transition: transform .25s;
+      }
+    }
+    > li:nth-last-child(1):hover {
+      > svg {
+        transform: rotate(180deg);
+      }
+    }
+    > #select_page {
+      color: #3C38FE;
+      font-weight: bold;
+    }
+  }
+}
+.login:hover {
+  box-shadow: inset 0 0 0 2rem #5552f8;
+  color: #fff;
+}
+.banner {
+  width: 100vw;
+}
+.PortfolioProduct,
+.PortfolioWebApp,
+.PortfolioGame {
+  display: flex;
+  flex-direction: colum;
+  gap: 30px;
+  width: 100%;
+  padding: 100px 310px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  > .PortfolioProductBox,
+    .PortfolioGameBox {
+    display: flex;
+    gap: 30px;
+
+    > .PortfolioProductImg,
+      .PortfolioGameImg {
+      width: 550px;
+      height: 300px;
+      background-color: #ccc;
+    }
+    > .PortfolioProductExplanation,
+      .PortfolioGameExplanation {
+      width: 720px;
+      height: 300px;
+    }
+  }
+  > .PortfolioWebAppBox {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 30px;
+
+    > .PortfolioWebAppImg {
+      width: 550px;
+      height: 300px;
+      background-color: #ccc;
+    }
+    > .PortfolioWebAppExplanation {
+      width: 720px;
+      height: 300px;
+    }
+  }
+
+  & .PortfolioTitle {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  & .PortfolioExplanation {
+    font-size: 16px;
+    margin-bottom: 15px;
+    display: block;
+    height: 191px;
+    text-align: justify;
+    position: relative;
+  }
+}
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
